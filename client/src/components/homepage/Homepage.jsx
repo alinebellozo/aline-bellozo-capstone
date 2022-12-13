@@ -5,7 +5,6 @@ export default function Homepage() {
     <>
       <section className="homepage">
         <div className="homepage__side-menu">
-          <h1 className="">LOGO</h1>
           <p className="">Option 1</p>
           <p className="">Option 2</p>
           <p className="">Option 3</p>

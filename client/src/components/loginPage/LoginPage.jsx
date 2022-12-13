@@ -1,7 +1,8 @@
 import "./LoginPage.scss";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
-  onAuthStateChanged,
+  //   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
@@ -13,9 +14,9 @@ export default function LoginPage() {
 
   const [user, setUser] = useState({});
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  //   onAuthStateChanged(auth, (currentUser) => {
+  //     setUser(currentUser);
+  //   });
 
   const login = async () => {
     try {
@@ -80,7 +81,12 @@ export default function LoginPage() {
           </button>
         </div>
 
-        <div className="">Don't have an account? Sign Up!</div>
+        <div className="">
+          Don't have an account?
+          <Link className="" to={`/signUpPage`}>
+            Sign Up!
+          </Link>
+        </div>
       </section>
     </>
   );

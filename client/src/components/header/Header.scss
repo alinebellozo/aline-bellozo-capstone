@@ -1,0 +1,75 @@
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/colors" as *;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: $Background-dark;
+    padding: 0 1rem;
+    
+    &__left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 35rem;
+    }
+
+    &__logo {
+        color: $Light;
+    }
+
+    &__title {
+        color: $Light;
+        font-size: 1.375rem;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 16rem;
+    }
+
+    &__login {
+        background-color: $LIGHT-BLUE;
+        border-radius: 1.25rem;
+        border: 1px dotted $Light;
+        width: 40%;
+        height: 50%;
+
+        // &:hover {
+        //     background-color: $BLUE-MEDIUM;
+        // }
+    }
+    
+    &__login-button {
+        text-decoration: none;
+        font-size: 1.375rem;
+        font-weight: 500;
+        color: $Text;
+        font-family: 'Dosis';
+        padding: 1rem;
+        
+    }
+
+    &__signup {
+        background-color: $RED;
+        border-radius: 1.25rem;
+        border: 1px dotted $Light;
+        width: 40%;
+        height: 50%;
+
+        // &:hover {
+        //     background-color: #9e252f;
+        // }
+    }
+
+    &__signup-button {
+        text-decoration: none;
+        font-size: 1.375rem;
+        font-weight: 500;
+        color: $Text;
+        font-family: 'Dosis';
+        padding: .5rem;
+    }
+}
