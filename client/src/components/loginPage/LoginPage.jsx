@@ -1,22 +1,15 @@
 import "./LoginPage.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  //   onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
-import { auth } from "../../firebase";
+
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth } from "../../firebase-config";
 
 export default function LoginPage() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
   const [user, setUser] = useState({});
-
-  //   onAuthStateChanged(auth, (currentUser) => {
-  //     setUser(currentUser);
-  //   });
 
   const login = async () => {
     try {

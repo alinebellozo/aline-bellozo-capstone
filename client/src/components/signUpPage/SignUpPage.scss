@@ -9,6 +9,10 @@
         color: $RED;
     }
 
+    &__error {
+        background-color: $RED;
+    }
+
     &__form-fields {
         display: flex;
         flex-direction: column;
