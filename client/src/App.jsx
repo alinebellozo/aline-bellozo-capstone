@@ -7,6 +7,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import LoginPage from "./components/loginPage/LoginPage";
 import UsersList from "./components/usersList/UsersList";
 import Footer from "./components/footer/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -40,22 +41,23 @@ export default function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/signUpPage" element={<SignUpPage />} />
             <Route
-              path="/FormPage"
+              path="/formPage"
               element={
-                // <AuthProvider value={{ currentUser }}>
-                <FormPage />
-                // </AuthProvider>
+                <ProtectedRoute>
+                  <FormPage />
+                </ProtectedRoute>
               }
             />
             <Route path="/loginPage" element={<LoginPage />} />
             <Route
-              path="/Dashboard"
+              path="/dashboard"
               element={
-                // <AuthProvider value={{ currentUser }}>
-                <Dashboard />
-                // </AuthProvider>
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
               }
             />
+
             {/* <Route
               path="/usersList"
               element={<UsersList getUserId={getUserIdHandler} />}
