@@ -2,6 +2,8 @@ import "./LoginPage.scss";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { Form, Col, Row } from "react-bootstrap";
+
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 
@@ -30,15 +32,14 @@ export default function LoginPage() {
 
   return (
     <>
-      <section className="">
-        <h2 className="">Login</h2>
-        <form>
-          <div className="">
-            <label className="">Email</label>
+      <section className="login">
+        <h2 className="login__header">Login</h2>
+        <form className="login__form">
+          <div className="login__fields">
+            <label className="login__label">Email</label>
             <input
-              className=""
-              name="email"
-              id="email"
+              className="login__input"
+              value={loginEmail}
               type="email"
               required
               placeholder="example@email.com"
@@ -46,13 +47,11 @@ export default function LoginPage() {
                 setLoginEmail(event.target.value);
               }}
             ></input>
-          </div>
-          <div className="">
-            <label className="">Password</label>
+
+            <label className="login__label">Password</label>
             <input
-              className=""
-              name="password"
-              id="password"
+              className="login__input"
+              value={loginPassword}
               type="password"
               required
               placeholder="Please insert a secure password"
@@ -61,22 +60,41 @@ export default function LoginPage() {
               }}
             ></input>
           </div>
-        </form>
-        <div className="">
-          <button className="" id="" type="submit">
-            Cancel
-          </button>
-          <button onClick={login} className="" id="" type="submit">
-            Log In
-          </button>
-          <button onClick={logout} className="" id="" type="submit">
-            Log Out
-          </button>
-        </div>
 
-        <div className="">
+          <Form.Group as={Row} className="signup__remember">
+            <Col sm={{ span: 10, offset: 2 }}>
+              <Form.Check label="Remember me" />
+            </Col>
+          </Form.Group>
+
+          <div className="login__button">
+            <button className="login__cancel" id="cancel" type="submit">
+              <Link className="login__cancel-link" to={`/`}>
+                Cancel
+              </Link>
+            </button>
+            <button
+              onClick={login}
+              className="login__login"
+              id="login"
+              type="submit"
+            >
+              Log In
+            </button>
+            <button
+              onClick={logout}
+              className="login__logout"
+              id="logout"
+              type="submit"
+            >
+              Log Out
+            </button>
+          </div>
+        </form>
+
+        <div className="login__new-account">
           Don't have an account?
-          <Link className="" to={`/signUpPage`}>
+          <Link className="login__new-link" to={`/signUpPage`}>
             Sign Up!
           </Link>
         </div>

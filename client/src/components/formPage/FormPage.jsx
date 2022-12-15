@@ -1,12 +1,14 @@
 import "./FormPage.scss";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
-import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 
 import UsersDataService from "../../services/users.services.jsx";
 
 export default function FormPage() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [cityAndProvince, setCityAndProvince] = useState("");
@@ -57,6 +59,8 @@ export default function FormPage() {
     setCountry("");
     setAreaOfInterest("");
     setExpertiseLevel("");
+
+    navigate("/UserProfile");
   };
 
   return (
@@ -73,11 +77,11 @@ export default function FormPage() {
             {message?.msg}
           </Alert>
         )}
-        <form onSubmit={handleSubmit} className="signup__form">
-          <div className="signup__form-fields">
-            <label className="signup__label">Name</label>
+        <form onSubmit={handleSubmit} className="form__form">
+          <div className="form__fields">
+            <label className="form__label">Name</label>
             <input
-              className="signup__input"
+              className="form__input"
               type="text"
               placeholder="Please enter your full name"
               value={name}
@@ -85,9 +89,9 @@ export default function FormPage() {
                 setName(event.target.value);
               }}
             ></input>
-            <label className="signup__label">Birth Date</label>
+            <label className="form__label">Birth Date</label>
             <input
-              className="signup__input"
+              className="form__input"
               type=""
               placeholder="Month DD, YYYY"
               value={birthDate}
@@ -95,30 +99,30 @@ export default function FormPage() {
                 setBirthDate(event.target.value);
               }}
             ></input>
-            <label className="signup__label">City / Province</label>
+            <label className="form__label">City / Province</label>
             <input
-              className="signup__input"
-              type=""
-              placeholder=""
+              className="form__input"
+              type="text"
+              placeholder="E.g. Vancouver, BC"
               value={cityAndProvince}
               onChange={(event) => {
                 setCityAndProvince(event.target.value);
               }}
             ></input>
-            <label className="signup__label">Country</label>
+            <label className="form__label">Country</label>
             <input
-              className="signup__input"
-              type=""
-              placeholder=""
+              className="form__input"
+              type="text"
+              placeholder="E.g. Canada"
               value={country}
               onChange={(event) => {
                 setCountry(event.target.value);
               }}
             ></input>
 
-            <label className="signup__label">Area(s) of interest</label>
+            <label className="form__label">Area(s) of interest</label>
             <input
-              className=""
+              className="form__input"
               type=""
               placeholder="E.g. Frontend, backend, AI, etc. "
               value={areaOfInterest}
@@ -127,9 +131,9 @@ export default function FormPage() {
               }}
             ></input>
 
-            <label className="signup__label">Level of expertise</label>
+            <label className="form__label">Level of expertise</label>
             <input
-              className=""
+              className="form__input"
               placeholder="E.g. Novice, Intermediate, etc."
               value={expertiseLevel}
               onChange={(event) => {
@@ -137,12 +141,14 @@ export default function FormPage() {
               }}
             ></input>
           </div>
-          <div className="signup__button">
-            <button className="signup__cancel" id="" type="submit">
-              Cancel
+          <div className="form__button">
+            <button className="form__cancel" id="cancel" type="submit">
+              <Link className="form__cancel-link" to={`/`}>
+                Cancel
+              </Link>
             </button>
-            <button className="signup__signup" id="" type="submit">
-              Sign Up
+            <button className="form__submit" id="submit" type="submit">
+              Submit
             </button>
           </div>
         </form>

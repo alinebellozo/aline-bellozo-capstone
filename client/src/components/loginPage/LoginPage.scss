@@ -1,2 +1,92 @@
 @use "../../styles/partials/fonts";
 @use "../../styles/partials/colors" as *;
+
+
+.login {
+
+    padding: 1rem;
+    
+    &__header {
+        text-align: center;
+        color: $RED;
+    }
+
+    &__error {
+        background-color: $RED;
+    }
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        padding: .4rem 0;
+        font-size: 1.2rem;
+    }
+
+    &__input {
+        padding: .7rem;
+        height: 2.4rem;
+        max-height: 2.4rem;
+        width: 60%;
+        border-radius: 1.2rem;
+        border: 1px dotted;
+    }
+
+    &__remember {
+        padding: 1rem 0;
+    }
+
+    &__button {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 1rem;
+    }
+
+    &__cancel {
+        background-color: $Light;
+        color: $Background-dark;
+        border-radius: 1.25rem;
+        border: 1px solid $LIGHT-BLUE;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+    }
+
+    &__cancel-link {
+        text-decoration: none;
+        color: $Background-dark;
+    }
+
+    &__login {
+        background-color: $Background-dark;
+        color: $Light;
+        border-radius: 1.25rem;
+        border: 1px solid $LIGHT-BLUE;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+    }
+
+    &__logout {
+        background-color: $Background-dark;
+        color: $Light;
+        border-radius: 1.25rem;
+        border: 1px solid $LIGHT-BLUE;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+    }
+
+    &__new-account {
+        font-size: 1.2rem;
+    }
+
+    &__new-link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: $BLUE-MEDIUM;
+        padding-left: .5rem;
+    }
+}

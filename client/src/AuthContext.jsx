@@ -1,27 +1,46 @@
-import React, { useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { auth } from "./firebase-config";
 
-const AuthContext = React.createContext();
+const UserContext = createContext();
 
-// a user might be required by a different component in the tree, so context can manage the user state
+export const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState({});
 
-// this is to share the value of the user’s state to all the children of AuthContext
-export function AuthProvider({ children, value }) {
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-// both functions allow to use context
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-export function useAuthValue() {
-  return useContext(AuthContext);
-}
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
-// to call it:
-// import { useAuthValue } from "./AuthContext"
+  const logout = () => {
+    return signOut(auth);
+  };
 
-// function childOfAuthProvider(){
-//   const {currentUser} = useAuthValue()
-//   console.log(currentUser)
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
+      setUser(currentUser);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
-//   return ...
+  return (
+    <UserContext.Provider value={{ createUser, user, logout, signIn }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
 
-// now currentUser is null because its value is not being set to anything
-// To set its value, we need to first get the current user from Firebase, which can be done either by using the auth instance that was initialized in firebase-config.js (auth.currentUser), or the onAuthStateChanged function, which is the recommended way. That way, we ensure that the Auth object isn’t in an intermediate state — such as initialization — when we get the current user.
+export const UserAuth = () => {
+  return useContext(UserContext);
+};

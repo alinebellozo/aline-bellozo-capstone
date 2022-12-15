@@ -1,12 +1,15 @@
 import "./SignUpPage.scss";
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { Form, Col, Row } from "react-bootstrap";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase-config";
 
 export default function SignUpPage() {
+  const navigate = useNavigate();
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerPasswordConfirm, setRegisterPasswordConfirm] = useState("");
@@ -35,9 +38,10 @@ export default function SignUpPage() {
           setRegisterEmail("");
           setRegisterPassword("");
           setRegisterPasswordConfirm("");
-          
         })
         .catch((err) => setError(err.message));
+
+      navigate("/FormPage");
     }
   };
 
@@ -71,6 +75,7 @@ export default function SignUpPage() {
                 setRegisterPassword(event.target.value);
               }}
             ></input>
+
             <label className="signup__label">Confirm Password</label>
             <input
               className="signup__input"
@@ -83,22 +88,29 @@ export default function SignUpPage() {
               }}
             ></input>
           </div>
+          <Form.Group as={Row} className="signup__remember">
+            <Col sm={{ span: 10, offset: 2 }}>
+              <Form.Check label="Remember me" />
+            </Col>
+          </Form.Group>
           <div className="signup__button">
-            <button className="signup__cancel" id="" type="submit">
-              Cancel
+            <button className="signup__cancel" id="cancel" type="submit">
+              <Link className="signup__cancel-link" to={`/`}>
+                Cancel
+              </Link>
             </button>
-            <button className="signup__signup" id="" type="submit">
+            <button className="signup__signup" id="signup" type="submit">
               Sign Up
             </button>
           </div>
-        </form>
 
-        <div className="">
-          Already have an account?
-          <Link className="" to={`/loginPage`}>
-            Log In
-          </Link>
-        </div>
+          <div className="signup__account-exists">
+            Already have an account?
+            <Link className="signup__account-link" to={`/loginPage`}>
+              Log In
+            </Link>
+          </div>
+        </form>
       </section>
     </>
   );

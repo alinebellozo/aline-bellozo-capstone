@@ -13,7 +13,7 @@
         background-color: $RED;
     }
 
-    &__form-fields {
+    &__fields {
         display: flex;
         flex-direction: column;
     }
@@ -30,6 +30,51 @@
         width: 60%;
         border-radius: 1.2rem;
         border: 1px dotted ;
-        
+    }
+
+    &__remember {
+        padding: 1rem 0;
+    }
+
+    &__button {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 1rem;
+    }
+
+    &__cancel {
+        background-color: $Light;
+        color: $Background-dark;
+        border-radius: 1.25rem;
+        border: 1px solid $LIGHT-BLUE;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+    }
+
+    &__cancel-link {
+        text-decoration: none;
+        color: $Background-dark;
+    }
+
+    &__signup {
+        background-color: $Background-dark;
+        color: $Light;
+        border-radius: 1.25rem;
+        border: 1px solid $LIGHT-BLUE;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+    }
+
+    &__account-exists {
+        font-size: 1.2rem;
+    }
+
+    &__account-link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: $BLUE-MEDIUM;
+        padding-left: .5rem;
     }
 }
