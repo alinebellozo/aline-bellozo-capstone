@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { AuthProvider } from "./AuthContext";
+import { AuthContextProvider } from "./AuthContext";
 
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -33,37 +33,37 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      {/* <AuthProvider value={{ currentUser }}> */}
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/signUpPage" element={<SignUpPage />} />
-          <Route
-            path="/FormPage"
-            element={
-              // <AuthProvider value={{ currentUser }}>
-              <FormPage />
-              // </AuthProvider>
-            }
-          />
-          <Route path="/loginPage" element={<LoginPage />} />
-          <Route
-            path="/Dashboard"
-            element={
-              // <AuthProvider value={{ currentUser }}>
-              <Dashboard />
-              // </AuthProvider>
-            }
-          />
-          {/* <Route
+      <AuthContextProvider>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/signUpPage" element={<SignUpPage />} />
+            <Route
+              path="/FormPage"
+              element={
+                // <AuthProvider value={{ currentUser }}>
+                <FormPage />
+                // </AuthProvider>
+              }
+            />
+            <Route path="/loginPage" element={<LoginPage />} />
+            <Route
+              path="/Dashboard"
+              element={
+                // <AuthProvider value={{ currentUser }}>
+                <Dashboard />
+                // </AuthProvider>
+              }
+            />
+            {/* <Route
               path="/usersList"
               element={<UsersList getUserId={getUserIdHandler} />}
             /> */}
-        </Routes>
-        <Footer />
-      </div>
-      {/* </AuthProvider> */}
+          </Routes>
+          <Footer />
+        </div>
+      </AuthContextProvider>
     </BrowserRouter>
   );
 }

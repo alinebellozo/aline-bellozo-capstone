@@ -1,62 +1,67 @@
 import "./LoginPage.scss";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from "../../AuthContext";
 
 import { Form, Col, Row } from "react-bootstrap";
 
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "../../firebase-config";
-
 export default function LoginPage() {
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const { signIn } = UserAuth();
 
-  const [user, setUser] = useState({});
-
-  const login = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setError("");
     try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
-    } catch (error) {
+      await signIn(email, password);
+      navigate("/Dashboard");
+      alert("Logged in successfully!");
+    } catch (err) {
+      setError(error.message);
       console.log(error.message);
     }
   };
 
-  const logout = async () => {
-    await signOut(auth);
-  };
+  // const handleLogout = async () => {
+  //   try {
+  //     await logout();
+  //     navigate("/");
+  //     alert("You are logged out");
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
 
   return (
     <>
       <section className="login">
         <h2 className="login__header">Login</h2>
-        <form className="login__form">
+        <form onSubmit={handleSubmit} className="login__form">
           <div className="login__fields">
             <label className="login__label">Email</label>
             <input
               className="login__input"
-              value={loginEmail}
+              value={email}
               type="email"
               required
               placeholder="example@email.com"
               onChange={(event) => {
-                setLoginEmail(event.target.value);
+                setEmail(event.target.value);
               }}
             ></input>
 
             <label className="login__label">Password</label>
             <input
               className="login__input"
-              value={loginPassword}
+              value={password}
               type="password"
               required
               placeholder="Please insert a secure password"
               onChange={(event) => {
-                setLoginPassword(event.target.value);
+                setPassword(event.target.value);
               }}
             ></input>
           </div>
@@ -73,24 +78,21 @@ export default function LoginPage() {
                 Cancel
               </Link>
             </button>
-            <button
-              onClick={login}
-              className="login__login"
-              id="login"
-              type="submit"
-            >
+            <button className="login__login" id="login" type="submit">
               Log In
-            </button>
-            <button
-              onClick={logout}
-              className="login__logout"
-              id="logout"
-              type="submit"
-            >
-              Log Out
             </button>
           </div>
         </form>
+        {/* <div className="login__button">
+          <button
+            onClick={handleLogout}
+            className="login__logout"
+            id="logout"
+            type="submit"
+          >
+            Log Out
+          </button>
+        </div> */}
 
         <div className="login__new-account">
           Don't have an account?

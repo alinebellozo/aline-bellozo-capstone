@@ -60,7 +60,7 @@ export default function FormPage() {
     setAreaOfInterest("");
     setExpertiseLevel("");
 
-    navigate("/UserProfile");
+    navigate("/Dashboard");
   };
 
   return (

@@ -48,69 +48,79 @@ export default function SignUpPage() {
   return (
     <>
       <section className="signup">
-        <h2 className="signup__header">Sign Up</h2>
-        {error && <div className="signup__error">{error}</div>}
-        <form onSubmit={signUp} className="signup__form">
-          <div className="signup__fields">
-            <label className="signup__label">Email</label>
-            <input
-              className="signup__input"
-              value={registerEmail}
-              type="email"
-              required
-              placeholder="example@email.com"
-              onChange={(event) => {
-                setRegisterEmail(event.target.value);
-              }}
-            ></input>
+        <div className="signup__left">
+          <h2 className="signup__header">Sign Up</h2>
+          {error && <div className="signup__error">{error}</div>}
+          <form onSubmit={signUp} className="signup__form">
+            <div className="signup__fields">
+              <label className="signup__label">Email</label>
+              <input
+                className="signup__input"
+                value={registerEmail}
+                type="email"
+                required
+                placeholder="example@email.com"
+                onChange={(event) => {
+                  setRegisterEmail(event.target.value);
+                }}
+              ></input>
 
-            <label className="signup__label">Password</label>
-            <input
-              className="signup__input"
-              value={registerPassword}
-              type="password"
-              required
-              placeholder="Please insert a secure password"
-              onChange={(event) => {
-                setRegisterPassword(event.target.value);
-              }}
-            ></input>
+              <label className="signup__label">Password</label>
+              <input
+                className="signup__input"
+                value={registerPassword}
+                type="password"
+                required
+                placeholder="Please insert a secure password"
+                onChange={(event) => {
+                  setRegisterPassword(event.target.value);
+                }}
+              ></input>
 
-            <label className="signup__label">Confirm Password</label>
-            <input
-              className="signup__input"
-              value={registerPasswordConfirm}
-              type="password"
-              required
-              placeholder="Please confirm the password"
-              onChange={(event) => {
-                setRegisterPasswordConfirm(event.target.value);
-              }}
-            ></input>
-          </div>
-          <Form.Group as={Row} className="signup__remember">
-            <Col sm={{ span: 10, offset: 2 }}>
-              <Form.Check label="Remember me" />
-            </Col>
-          </Form.Group>
-          <div className="signup__button">
-            <button className="signup__cancel" id="cancel" type="submit">
-              <Link className="signup__cancel-link" to={`/`}>
-                Cancel
+              <label className="signup__label">Confirm Password</label>
+              <input
+                className="signup__input"
+                value={registerPasswordConfirm}
+                type="password"
+                required
+                placeholder="Please confirm the password"
+                onChange={(event) => {
+                  setRegisterPasswordConfirm(event.target.value);
+                }}
+              ></input>
+            </div>
+            <Form.Group as={Row} className="signup__remember">
+              <Col sm={{ span: 10, offset: 2 }}>
+                <Form.Check label="Remember me" />
+              </Col>
+            </Form.Group>
+            <div className="signup__button">
+              <button className="signup__cancel" id="cancel" type="submit">
+                <Link className="signup__cancel-link" to={`/`}>
+                  Cancel
+                </Link>
+              </button>
+              <button className="signup__signup" id="signup" type="submit">
+                Sign Up
+              </button>
+            </div>
+
+            <div className="signup__account-exists">
+              Already have an account?
+              <Link className="signup__account-link" to={`/loginPage`}>
+                Log In
               </Link>
-            </button>
-            <button className="signup__signup" id="signup" type="submit">
-              Sign Up
-            </button>
-          </div>
+            </div>
+          </form>
+        </div>
 
-          <div className="signup__account-exists">
-            Already have an account?
-            <Link className="signup__account-link" to={`/loginPage`}>
-              Log In
-            </Link>
-          </div>
-        </form>
+        <div className="signup__right">
+          <img
+            className="signup__image-right"
+            src="../assets/images/networking.png"
+            alt=""
+          />
+        </div>
       </section>
     </>
   );

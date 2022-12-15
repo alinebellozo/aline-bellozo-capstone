@@ -7,10 +7,26 @@ export default function Header() {
     <>
       <section className="navbar">
         <div className="navbar__left">
-          <div className="navbar__logo">{"{ communITy study }"}</div>
-          <h3 className="navbar__title">Home</h3>
-          <h3 className="navbar__title">About</h3>
-          <h3 className="navbar__title">Events</h3>
+          <div className="navbar__logo">
+            <a className="navbar__logo-link" href="/">
+              {"{ communITy study }"}
+            </a>
+          </div>
+          <h3 className="navbar__title">
+            <a className="navbar__title-link" href="/">
+              Home
+            </a>
+          </h3>
+          <h3 className="navbar__title">
+            <a className="navbar__title-link" href="/Events.jsx">
+              Events
+            </a>
+          </h3>
+          <h3 className="navbar__title">
+            <a className="navbar__title-link" href="/About.jsx">
+              About
+            </a>
+          </h3>
         </div>
 
         <div className="navbar__right">

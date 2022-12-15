@@ -14,11 +14,17 @@
         width: 35rem;
     }
 
-    &__logo {
+    // &__logo {
+    //     color: $Light;
+    // }
+
+    &__logo-link {
+        text-decoration: none;
         color: $Light;
     }
 
-    &__title {
+    &__title-link {
+        text-decoration: none;
         color: $Light;
         font-size: 1.375rem;
     }

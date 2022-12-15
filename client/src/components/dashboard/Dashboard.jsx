@@ -4,10 +4,9 @@ import { UserAuth } from "../../AuthContext";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function UserProfile() {
+export default function Dashboard() {
+  const { user, logout } = UserAuth();
   const navigate = useNavigate();
-  const { user, logout } = UserAuth;
-  console.log();
 
   const handleLogout = async () => {
     try {
@@ -23,7 +22,7 @@ export default function UserProfile() {
     <>
       <section className="dashboard">
         <h1 className="dashboard__header">Welcome!</h1>
-        {/* <p className="">You are logged in as: {user && user.email}</p> */}
+        <p className="">You are logged in as: {user && user.email}</p>
         <div className="dashboard__text">
           <p className="">
             This is the place where you will connect to people, discover new
