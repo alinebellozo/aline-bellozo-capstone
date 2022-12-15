@@ -18,7 +18,6 @@ export default function SignUpPage() {
       if (registerPassword !== registerPasswordConfirm) {
         isValid = false;
         setError("Passwords do not match");
-        // alert(setError);
       }
     }
     return isValid;
@@ -41,20 +40,6 @@ export default function SignUpPage() {
         .catch((err) => setError(err.message));
     }
   };
-
-  // const signUp = async () => {
-  //   try {
-  //     const user = await createUserWithEmailAndPassword(
-  //       auth,
-  //       registerEmail,
-  //       registerPassword,
-  //       registerPasswordConfirm
-  //     );
-  //     // console.log(user);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
 
   return (
     <>

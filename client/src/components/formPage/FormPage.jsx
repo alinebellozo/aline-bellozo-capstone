@@ -1,56 +1,88 @@
 import "./FormPage.scss";
 
-import { collection, getDocs, addDoc } from "firebase/firestore";
-import { db } from "../../firebase-config";
-
 import React, { useState, useEffect } from "react";
 
+import { Form, Alert, InputGroup, Button, ButtonGroup } from "react-bootstrap";
+
+import UsersDataService from "../../services/users.services.jsx";
+
 export default function FormPage() {
-  const [newName, setNewName] = useState("");
-  const [newBirthDate, setNewBirthDate] = useState("");
-  const [newCityAndProvince, setNewCityAndProvince] = useState("");
-  const [newCountry, setNewCountry] = useState("");
-  const [newAreaOfInterest, setNewAreaOfInterest] = useState("");
-  const [newLevelOfExpertise, setNewLevelOfExpertise] = useState("");
+  const [name, setName] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [cityAndProvince, setCityAndProvince] = useState("");
+  const [country, setCountry] = useState("");
+  const [areaOfInterest, setAreaOfInterest] = useState("");
+  const [expertiseLevel, setExpertiseLevel] = useState("");
+  const [message, setMessage] = useState({ error: false, msg: "" });
 
-  const [users, setUsers] = useState([]);
-  const usersCollectionRef = collection(db, "users");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setMessage("");
 
-  const createUser = async () => {
-    await addDoc(usersCollectionRef, {
-      name: newName,
-      birthDate: newBirthDate,
-      cityAndProvince: newCityAndProvince,
-      country: newCountry,
-      areaOfInterest: newAreaOfInterest,
-      levelOfExpertise: newLevelOfExpertise,
-    });
-    console.log(createUser);
-  };
+    if (
+      name === "" ||
+      birthDate === "" ||
+      cityAndProvince === "" ||
+      country === "" ||
+      areaOfInterest === "" ||
+      expertiseLevel === ""
+    ) {
+      setMessage({
+        error: true,
+        msg: "Ops, all fields need to be filled in...",
+      });
+      return;
+    }
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(usersCollectionRef);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); //... allows to add more fields to the obj
+    const createUser = {
+      name,
+      birthDate,
+      cityAndProvince,
+      country,
+      areaOfInterest,
+      expertiseLevel,
     };
+    console.log(createUser);
 
-    getUsers();
-  }, []);
+    try {
+      await UsersDataService.addUsers(createUser);
+      setMessage({ error: false, msg: "Profile created successfully!" });
+    } catch (err) {
+      setMessage({ error: true, msg: err.message });
+    }
+
+    setName("");
+    setBirthDate("");
+    setCityAndProvince("");
+    setCountry("");
+    setAreaOfInterest("");
+    setExpertiseLevel("");
+  };
 
   return (
     <>
       <section className="form">
         <h2 className="form__header">Sign Up</h2>
-
-        <form className="signup__form">
+        {message?.msg && (
+          <Alert
+            variant={message?.error ? "danger" : "success"}
+            dismissible
+            onClose={() => setMessage("")}
+          >
+            {" "}
+            {message?.msg}
+          </Alert>
+        )}
+        <form onSubmit={handleSubmit} className="signup__form">
           <div className="signup__form-fields">
             <label className="signup__label">Name</label>
             <input
               className="signup__input"
               type="text"
               placeholder="Please enter your full name"
+              value={name}
               onChange={(event) => {
-                setNewName(event.target.value);
+                setName(event.target.value);
               }}
             ></input>
             <label className="signup__label">Birth Date</label>
@@ -58,8 +90,9 @@ export default function FormPage() {
               className="signup__input"
               type=""
               placeholder="Month DD, YYYY"
+              value={birthDate}
               onChange={(event) => {
-                setNewBirthDate(event.target.value);
+                setBirthDate(event.target.value);
               }}
             ></input>
             <label className="signup__label">City / Province</label>
@@ -67,8 +100,9 @@ export default function FormPage() {
               className="signup__input"
               type=""
               placeholder=""
+              value={cityAndProvince}
               onChange={(event) => {
-                setNewCityAndProvince(event.target.value);
+                setCityAndProvince(event.target.value);
               }}
             ></input>
             <label className="signup__label">Country</label>
@@ -76,8 +110,9 @@ export default function FormPage() {
               className="signup__input"
               type=""
               placeholder=""
+              value={country}
               onChange={(event) => {
-                setNewCountry(event.target.value);
+                setCountry(event.target.value);
               }}
             ></input>
 
@@ -86,8 +121,9 @@ export default function FormPage() {
               className=""
               type=""
               placeholder="E.g. Frontend, backend, AI, etc. "
+              value={areaOfInterest}
               onChange={(event) => {
-                setNewAreaOfInterest(event.target.value);
+                setAreaOfInterest(event.target.value);
               }}
             ></input>
 
@@ -95,8 +131,9 @@ export default function FormPage() {
             <input
               className=""
               placeholder="E.g. Novice, Intermediate, etc."
+              value={expertiseLevel}
               onChange={(event) => {
-                setNewLevelOfExpertise(event.target.value);
+                setExpertiseLevel(event.target.value);
               }}
             ></input>
           </div>
@@ -104,12 +141,7 @@ export default function FormPage() {
             <button className="signup__cancel" id="" type="submit">
               Cancel
             </button>
-            <button
-              onClick={createUser}
-              className="signup__signup"
-              id=""
-              type="submit"
-            >
+            <button className="signup__signup" id="" type="submit">
               Sign Up
             </button>
           </div>

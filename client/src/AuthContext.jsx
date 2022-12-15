@@ -24,4 +24,4 @@ export function useAuthValue() {
 //   return ...
 
 // now currentUser is null because its value is not being set to anything
-// To set its value, we need to first get the current user from Firebase, which can be done either by using the auth instance that was initialized in firebase-config.js file (auth.currentUser), or the onAuthStateChanged function, which is the recommended way to get the current user. That way, we ensure that the Auth object isn’t in an intermediate state — such as initialization — when we get the current user.
+// To set its value, we need to first get the current user from Firebase, which can be done either by using the auth instance that was initialized in firebase-config.js (auth.currentUser), or the onAuthStateChanged function, which is the recommended way. That way, we ensure that the Auth object isn’t in an intermediate state — such as initialization — when we get the current user.
