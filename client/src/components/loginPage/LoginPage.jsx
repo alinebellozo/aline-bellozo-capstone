@@ -5,6 +5,8 @@ import { UserAuth } from "../../AuthContext";
 
 import { Form, Col, Row } from "react-bootstrap";
 
+import WorldConnections from "../../assets/images/world-connection.svg";
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,8 +30,8 @@ export default function LoginPage() {
   return (
     <>
       <section className="login">
-        <h2 className="login__header">Login</h2>
         <form onSubmit={handleSubmit} className="login__form">
+          <h2 className="login__header">Login</h2>
           <div className="login__fields">
             <label className="login__label">Email</label>
             <input
@@ -80,6 +82,15 @@ export default function LoginPage() {
             </Link>
           </div>
         </form>
+        <div className="login__img-container">
+          <div className="login__image">
+            <img
+              className="login__image-link"
+              src={WorldConnections}
+              alt="A cartoon showing the map of the world with dots and lines connecting them, and fireworks above it."
+            />
+          </div>
+        </div>
       </section>
     </>
   );

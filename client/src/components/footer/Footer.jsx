@@ -13,8 +13,11 @@ export default function Footer() {
           <div className="footer__contact-container">
             <h3 className="footer__email-contact">Email</h3>
             <address className="footer__email">
-              <a className="footer__email-address" href="mailto:info@email.com">
-                info@email.com
+              <a
+                className="footer__email-address"
+                href="mailto:info@communitystudy.com"
+              >
+                info@communitystudy.com
               </a>
             </address>
           </div>
@@ -57,7 +60,7 @@ export default function Footer() {
               </a>
               <a
                 className="footer__link"
-                href="https://www.github.com/"
+                href="https://github.com/alinebellozo/aline-bellozo-capstone"
                 target="_blank"
               >
                 <img
@@ -68,6 +71,11 @@ export default function Footer() {
               </a>
             </nav>
           </div>
+        </div>
+        <div className="footer__logo">
+          <a className="navbar__logo-link" href="/">
+            {"{ communITy study }"}
+          </a>
         </div>
       </section>
     </>

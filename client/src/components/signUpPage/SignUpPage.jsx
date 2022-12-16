@@ -3,6 +3,8 @@ import "./SignUpPage.scss";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import Networking from "../../assets/images/networking.png";
+
 import { Form, Col, Row } from "react-bootstrap";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -48,8 +50,8 @@ export default function SignUpPage() {
     <>
       <section className="signup">
         <div className="signup__left">
-          <h2 className="signup__header">Sign Up</h2>
           <form onSubmit={signUp} className="signup__form">
+            <h2 className="signup__header">Sign Up</h2>
             {error && <div className="signup__error">{error}</div>}
             <div className="signup__fields">
               <label className="signup__label">Email</label>
@@ -113,15 +115,15 @@ export default function SignUpPage() {
           </form>
         </div>
 
-        {/* <div className="signup__right">
+        <div className="signup__right">
           <div className="signup__image-right">
             <img
               className="signup__image"
-              src="../assets/images/networking.png"
-              alt=""
+              src={Networking}
+              alt="A dotted line connecting faces from several places around a globe."
             />
           </div>
-        </div> */}
+        </div>
       </section>
     </>
   );

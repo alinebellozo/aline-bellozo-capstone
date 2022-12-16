@@ -14,13 +14,10 @@
         width: 35rem;
     }
 
-    // &__logo {
-    //     color: $Light;
-    // }
-
     &__logo-link {
         text-decoration: none;
         color: $Light;
+        font-size: 22px;
     }
 
     &__title-link {
@@ -29,53 +26,40 @@
         font-size: 1.375rem;
     }
 
-//     &__right {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//         width: 16rem;
-//     }
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 16rem;
+    }
 
-//     &__login {
-//         background-color: $LIGHT-BLUE;
-//         border-radius: 1.25rem;
-//         border: 1px dotted $Light;
-//         width: 40%;
-//         height: 50%;
+    &__login {
+        background-color: $LIGHT-BLUE;
+        border-radius: 1.25rem;
+        border: 1px dotted $Light;
+        width: 40%;
+        height: 50%;
+        font-family: 'Dosis';
+        font-size: 19px;
 
-//         // &:hover {
-//         //     background-color: $BLUE-MEDIUM;
-//         // }
-//     }
+        &:hover {
+            background-color: $BLUE-MEDIUM;
+            cursor: pointer;
+        }
+    }
     
-//     &__login-button {
-//         text-decoration: none;
-//         font-size: 1.375rem;
-//         font-weight: 500;
-//         color: $Text;
-//         font-family: 'Dosis';
-//         padding: 1rem;
-        
-//     }
+    &__signUp {
+        background-color: $RED;
+        border-radius: 1.25rem;
+        border: 1px dotted $Light;
+        width: 40%;
+        height: 50%;
+        font-family: 'Dosis';
+        font-size: 19px;
 
-//     &__signup {
-//         background-color: $RED;
-//         border-radius: 1.25rem;
-//         border: 1px dotted $Light;
-//         width: 40%;
-//         height: 50%;
-
-//         // &:hover {
-//         //     background-color: #9e252f;
-//         // }
-//     }
-
-//     &__signup-button {
-//         text-decoration: none;
-//         font-size: 1.375rem;
-//         font-weight: 500;
-//         color: $Text;
-//         font-family: 'Dosis';
-//         padding: .5rem;
-//     }
+        &:hover {
+            cursor: pointer;
+            background-color: lightcoral;
+        }
+    }
 }

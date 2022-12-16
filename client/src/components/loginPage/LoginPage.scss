@@ -4,11 +4,12 @@
 
 .login {
 
-    padding: 1rem;
+    padding: 1.5rem;
+    display: flex;
     
     &__header {
         text-align: center;
-        color: $RED;
+        color: $YELLOW;
     }
 
     // &__error {
@@ -20,10 +21,11 @@
     // }
 
     &__form {
-        margin-left: 500px;
-        height: 500px;
-        width: 400px;
-        border: 4px double $Text-dark;
+        margin-left: 31.25rem;
+        height: 34rem;
+        min-width: 25rem;
+        width: 25rem;
+        border: .25rem double $Text-dark;
         border-radius: 1rem;
         box-shadow: 5px 0px 18px rgb(19, 24, 44, 0.9);
     }
@@ -31,7 +33,7 @@
     &__fields {
         display: flex;
         flex-direction: column;
-        padding-top: 1.5rem;
+        padding-top: 1rem;
     }
 
     &__label {
@@ -68,6 +70,10 @@
         height: 2rem;
         max-height: 2rem;
         padding: .5rem;
+        
+        &:hover {
+            background-color: $BLUE-MEDIUM;
+        }
     }
 
     &__cancel-link {
@@ -80,19 +86,16 @@
         color: $Light;
         border-radius: 1.25rem;
         border: 1px solid $LIGHT-BLUE;
+        width: 3.75rem;
+        max-width: 3.75rem;
         height: 2rem;
         max-height: 2rem;
         padding: .5rem;
-    }
 
-    &__logout {
-        background-color: $Background-dark;
-        color: $Light;
-        border-radius: 1.25rem;
-        border: 1px solid $LIGHT-BLUE;
-        height: 2rem;
-        max-height: 2rem;
-        padding: .5rem;
+        &:hover {
+            cursor: pointer;
+            background-color: $BLUE-MEDIUM;
+        }
     }
 
     &__new-account {
@@ -103,7 +106,24 @@
     &__new-link {
         text-decoration: none;
         font-size: 1.2rem;
-        color: $BLUE-MEDIUM;
+        color: $YELLOW;
         padding-left: .5rem;
+    }
+
+    &__img-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 37.5rem;
+        min-width: 37.5rem;
+    }
+
+    &__image {
+        flex-basis: 80%;
+    }
+
+    &__image-link {
+        max-width: 100%
     }
 }
