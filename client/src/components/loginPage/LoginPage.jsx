@@ -25,16 +25,6 @@ export default function LoginPage() {
     }
   };
 
-  // const handleLogout = async () => {
-  //   try {
-  //     await logout();
-  //     navigate("/");
-  //     alert("You are logged out");
-  //   } catch (err) {
-  //     console.log(err.message);
-  //   }
-  // };
-
   return (
     <>
       <section className="login">
@@ -82,24 +72,14 @@ export default function LoginPage() {
               Log In
             </button>
           </div>
-        </form>
-        {/* <div className="login__button">
-          <button
-            onClick={handleLogout}
-            className="login__logout"
-            id="logout"
-            type="submit"
-          >
-            Log Out
-          </button>
-        </div> */}
 
-        <div className="login__new-account">
-          Don't have an account?
-          <Link className="login__new-link" to={`/signUpPage`}>
-            Sign Up!
-          </Link>
-        </div>
+          <div className="login__new-account">
+            Don't have an account?
+            <Link className="login__new-link" to={`/signUpPage`}>
+              Sign Up!
+            </Link>
+          </div>
+        </form>
       </section>
     </>
   );

@@ -29,53 +29,53 @@
         font-size: 1.375rem;
     }
 
-    &__right {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 16rem;
-    }
+//     &__right {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         width: 16rem;
+//     }
 
-    &__login {
-        background-color: $LIGHT-BLUE;
-        border-radius: 1.25rem;
-        border: 1px dotted $Light;
-        width: 40%;
-        height: 50%;
+//     &__login {
+//         background-color: $LIGHT-BLUE;
+//         border-radius: 1.25rem;
+//         border: 1px dotted $Light;
+//         width: 40%;
+//         height: 50%;
 
-        // &:hover {
-        //     background-color: $BLUE-MEDIUM;
-        // }
-    }
+//         // &:hover {
+//         //     background-color: $BLUE-MEDIUM;
+//         // }
+//     }
     
-    &__login-button {
-        text-decoration: none;
-        font-size: 1.375rem;
-        font-weight: 500;
-        color: $Text;
-        font-family: 'Dosis';
-        padding: 1rem;
+//     &__login-button {
+//         text-decoration: none;
+//         font-size: 1.375rem;
+//         font-weight: 500;
+//         color: $Text;
+//         font-family: 'Dosis';
+//         padding: 1rem;
         
-    }
+//     }
 
-    &__signup {
-        background-color: $RED;
-        border-radius: 1.25rem;
-        border: 1px dotted $Light;
-        width: 40%;
-        height: 50%;
+//     &__signup {
+//         background-color: $RED;
+//         border-radius: 1.25rem;
+//         border: 1px dotted $Light;
+//         width: 40%;
+//         height: 50%;
 
-        // &:hover {
-        //     background-color: #9e252f;
-        // }
-    }
+//         // &:hover {
+//         //     background-color: #9e252f;
+//         // }
+//     }
 
-    &__signup-button {
-        text-decoration: none;
-        font-size: 1.375rem;
-        font-weight: 500;
-        color: $Text;
-        font-family: 'Dosis';
-        padding: .5rem;
-    }
+//     &__signup-button {
+//         text-decoration: none;
+//         font-size: 1.375rem;
+//         font-weight: 500;
+//         color: $Text;
+//         font-family: 'Dosis';
+//         padding: .5rem;
+//     }
 }

@@ -1,8 +1,31 @@
 import "./Header.scss";
-import React from "react";
-import { Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
+
+import { UserAuth } from "../../AuthContext";
 
 export default function Header() {
+  const navigate = useNavigate();
+  const { user, logout, createUserWithEmailAndPassword } = UserAuth();
+
+  const clickLogin = () => {
+    if (user) {
+      logout();
+      alert("Signed out successfully!");
+      navigate("/");
+    } else {
+      navigate("/loginPage");
+    }
+  };
+
+  const clickSignUp = () => {
+    if (user !== null) {
+      // logout();
+    } else {
+      navigate("/signUpPage");
+    }
+  };
+
   return (
     <>
       <section className="navbar">
@@ -30,15 +53,11 @@ export default function Header() {
         </div>
 
         <div className="navbar__right">
-          <button className="navbar__login">
-            <Link className="navbar__login-button" to={`loginPage`}>
-              Log In
-            </Link>
+          <button onClick={clickLogin} className="navbar__login">
+            {user ? "Sign Out" : "Login"}
           </button>
-          <button className="navbar__signup">
-            <Link className="navbar__signup-button" to={`signUpPage`}>
-              Sign Up
-            </Link>
+          <button onClick={clickSignUp} className="navbar__signUp">
+            {user ? "Dashboard" : "Sign Up"}
           </button>
         </div>
       </section>

@@ -20,7 +20,7 @@ export default function SignUpPage() {
     if (registerPassword !== "" && registerPasswordConfirm !== "") {
       if (registerPassword !== registerPasswordConfirm) {
         isValid = false;
-        setError("Passwords do not match");
+        setError("Passwords do not match!");
       }
     }
     return isValid;
@@ -31,7 +31,6 @@ export default function SignUpPage() {
     setError("");
 
     if (validatePassword()) {
-      // Create a new user with email and password using firebase
       createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
         .then((res) => {
           console.log(res.user);
@@ -50,8 +49,8 @@ export default function SignUpPage() {
       <section className="signup">
         <div className="signup__left">
           <h2 className="signup__header">Sign Up</h2>
-          {error && <div className="signup__error">{error}</div>}
           <form onSubmit={signUp} className="signup__form">
+            {error && <div className="signup__error">{error}</div>}
             <div className="signup__fields">
               <label className="signup__label">Email</label>
               <input
@@ -114,13 +113,15 @@ export default function SignUpPage() {
           </form>
         </div>
 
-        <div className="signup__right">
-          <img
-            className="signup__image-right"
-            src="../assets/images/networking.png"
-            alt=""
-          />
-        </div>
+        {/* <div className="signup__right">
+          <div className="signup__image-right">
+            <img
+              className="signup__image"
+              src="../assets/images/networking.png"
+              alt=""
+            />
+          </div>
+        </div> */}
       </section>
     </>
   );

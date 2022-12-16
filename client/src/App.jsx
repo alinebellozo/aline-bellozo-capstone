@@ -43,18 +43,18 @@ export default function App() {
             <Route
               path="/formPage"
               element={
-                <ProtectedRoute>
-                  <FormPage />
-                </ProtectedRoute>
+                // <ProtectedRoute>
+                <FormPage />
+                // </ProtectedRoute>
               }
             />
             <Route path="/loginPage" element={<LoginPage />} />
             <Route
               path="/dashboard"
               element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
+                // <ProtectedRoute>
+                <Dashboard />
+                // </ProtectedRoute>
               }
             />
 
