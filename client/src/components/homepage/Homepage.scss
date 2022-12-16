@@ -3,24 +3,41 @@
 
 .homepage {
 
-    background-image: url(../../assets/images/connections.jpg);
-    background-size: 100%;
-    opacity: 0.8;
+    background: url(../../assets/images/road-to-knowledge.svg);
+    background-repeat: no-repeat;
+    background-size: 48%;
+    background-position: right -2% bottom 60%;
     height: 700px;
     width: 100%;
 
-    &__content {
+    &__content-container {
         display: flex;
-        justify-content: center;
-
+        flex-direction: column;
     }
 
-    &__header{
+    &__container {
+        display: flex;
+        align-items: center;
+        padding-left: 2rem;
+    }
+
+    &__header {
+        font-size: 2rem;
+        color: $YELLOW;
+        padding: 1.7rem 0;
+    }
+
+    &__content {
+        font-size: 28px;
+        color: $BLUE-MEDIUM;
+        width: 40%;
         margin: 0;
-        color: $Light;
-        font-size: 48px;
-        text-align: center;
-        width: 600px;
-        margin-top: 20rem;
+        padding: 0.5rem;
     }
+
+    &__image {
+        width: 13%;
+        max-width: 15%;
+        height: auto;
+    } 
 }
