@@ -5,6 +5,7 @@ import SignUpPage from "./components/signUpPage/SignUpPage";
 import FormPage from "./components/formPage/FormPage";
 import Dashboard from "./components/dashboard/Dashboard";
 import LoginPage from "./components/loginPage/LoginPage";
+import About from "./components/about/About";
 import UsersList from "./components/usersList/UsersList";
 import Footer from "./components/footer/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";

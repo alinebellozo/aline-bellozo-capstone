@@ -40,6 +40,7 @@
 
     &__card-one:hover &__inner {
         transform: rotateY(180deg);
+        cursor: pointer;
     }
 
     &__front-one, &__front-two, &__front-three,
@@ -70,6 +71,7 @@
 
     &__card-two:hover &__inner {
         transform: rotateY(180deg);
+        cursor: pointer;
     }
 
     &__front-two {
@@ -80,6 +82,7 @@
 
     &__card-three:hover &__inner {
         transform: rotateY(180deg);
+        cursor: pointer;
     }
 
     &__front-three {
