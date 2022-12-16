@@ -5,15 +5,26 @@
 
     padding: 1rem;
 
-    &__cards {
-        display: flex;
+    &__header {
+        font-size: 2rem;
+        margin-bottom: 0;
     }
 
-    &__card-one, &__card-two {
+    &__text {
+        font-size: 24px;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 2rem 0;
+    }
+
+    &__card-one, &__card-two, &__card-three {
         background-color: transparent;
         width: 300px;
-        height: 200px;
-        border: 3px double $YELLOW;
+        height: 300px;
+        border: 2px dotted $YELLOW;
         border-radius: 1.5rem;
         perspective: 1000px;
     }
@@ -31,7 +42,7 @@
         transform: rotateY(180deg);
     }
 
-    &__front-one, &__front-two,
+    &__front-one, &__front-two, &__front-three,
     &__back {
         position: absolute;
         width: 100%;
@@ -43,15 +54,18 @@
     }
 
     &__front-one {
-        background-image: url(../../assets/images/creativity.jpg);
+        background-image: url(../../assets/images/study-goals.svg);
         background-size: 100%;
-        color: $Light;
+        color: $YELLOW;
     }
 
     &__back {
         background-color: $BLUE-MEDIUM;
-        color: $GRAY;
+        color: $Light;
+        font-size: 22px;
+        padding-top: .5rem;
         transform: rotateY(180deg);
+        padding: 1rem;
     }
 
     &__card-two:hover &__inner {
@@ -59,21 +73,29 @@
     }
 
     &__front-two {
-        // background-image: url(../../assets/images/oganization.jpg);
+        background-image: url(../../assets/images/board.svg);
         background-size: 100%;
-        color: $Light;
+        color: $YELLOW;
     }
 
-    &__logout {
-        background-color: $Light;
-        color: $Background-dark;
-        border-radius: 1.25rem;
-        border: 1px solid $LIGHT-BLUE;
-        height: 2rem;
-        max-height: 2rem;
-        padding: .5rem;
-        margin: 1rem 0 0 0 ;
+    &__card-three:hover &__inner {
+        transform: rotateY(180deg);
     }
-    
 
+    &__front-three {
+        background-image: url(../../assets/images/selflove.svg);
+        background-size: 100%;
+        color: $YELLOW;
+    }
+
+    // &__logout {
+    //     background-color: $Light;
+    //     color: $Background-dark;
+    //     border-radius: 1.25rem;
+    //     border: 1px solid $LIGHT-BLUE;
+    //     height: 2rem;
+    //     max-height: 2rem;
+    //     padding: .5rem;
+    //     margin: 1rem 0 0 0 ;
+    // }
 }

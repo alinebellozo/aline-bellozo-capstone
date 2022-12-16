@@ -66,92 +66,94 @@ export default function FormPage() {
   return (
     <>
       <section className="form">
-        <h2 className="form__header">Sign Up</h2>
-        {message?.msg && (
-          <Alert
-            variant={message?.error ? "danger" : "success"}
-            dismissible
-            onClose={() => setMessage("")}
-          >
-            {" "}
-            {message?.msg}
-          </Alert>
-        )}
-        <form onSubmit={handleSubmit} className="form__form">
-          <div className="form__fields">
-            <label className="form__label">Name</label>
-            <input
-              className="form__input"
-              type="text"
-              placeholder="Please enter your full name"
-              value={name}
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-            ></input>
-            <label className="form__label">Birth Date</label>
-            <input
-              className="form__input"
-              type=""
-              placeholder="Month DD, YYYY"
-              value={birthDate}
-              onChange={(event) => {
-                setBirthDate(event.target.value);
-              }}
-            ></input>
-            <label className="form__label">City / Province</label>
-            <input
-              className="form__input"
-              type="text"
-              placeholder="E.g. Vancouver, BC"
-              value={cityAndProvince}
-              onChange={(event) => {
-                setCityAndProvince(event.target.value);
-              }}
-            ></input>
-            <label className="form__label">Country</label>
-            <input
-              className="form__input"
-              type="text"
-              placeholder="E.g. Canada"
-              value={country}
-              onChange={(event) => {
-                setCountry(event.target.value);
-              }}
-            ></input>
+        <div className="form__container">
+          <h2 className="form__header">Sign Up</h2>
+          {message?.msg && (
+            <Alert
+              variant={message?.error ? "danger" : "success"}
+              dismissible
+              onClose={() => setMessage("")}
+            >
+              {" "}
+              {message?.msg}
+            </Alert>
+          )}
+          <form onSubmit={handleSubmit} className="form__form-fields">
+            <div className="form__fields">
+              <label className="form__label">Name</label>
+              <input
+                className="form__input"
+                type="text"
+                placeholder="Please enter your full name"
+                value={name}
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+              ></input>
+              <label className="form__label">Birth Date</label>
+              <input
+                className="form__input"
+                type=""
+                placeholder="Month DD, YYYY"
+                value={birthDate}
+                onChange={(event) => {
+                  setBirthDate(event.target.value);
+                }}
+              ></input>
+              <label className="form__label">City / Province</label>
+              <input
+                className="form__input"
+                type="text"
+                placeholder="E.g. Vancouver, BC"
+                value={cityAndProvince}
+                onChange={(event) => {
+                  setCityAndProvince(event.target.value);
+                }}
+              ></input>
+              <label className="form__label">Country</label>
+              <input
+                className="form__input"
+                type="text"
+                placeholder="E.g. Canada"
+                value={country}
+                onChange={(event) => {
+                  setCountry(event.target.value);
+                }}
+              ></input>
 
-            <label className="form__label">Area(s) of interest</label>
-            <input
-              className="form__input"
-              type=""
-              placeholder="E.g. Frontend, backend, AI, etc. "
-              value={areaOfInterest}
-              onChange={(event) => {
-                setAreaOfInterest(event.target.value);
-              }}
-            ></input>
+              <label className="form__label">Area(s) of interest</label>
+              <input
+                className="form__input"
+                type=""
+                placeholder="E.g. Frontend, backend, AI, etc. "
+                value={areaOfInterest}
+                onChange={(event) => {
+                  setAreaOfInterest(event.target.value);
+                }}
+              ></input>
 
-            <label className="form__label">Level of expertise</label>
-            <input
-              className="form__input"
-              placeholder="E.g. Novice, Intermediate, etc."
-              value={expertiseLevel}
-              onChange={(event) => {
-                setExpertiseLevel(event.target.value);
-              }}
-            ></input>
-          </div>
-          <div className="form__button">
-            <button className="form__cancel" id="cancel" type="submit">
-              <Link className="form__cancel-link" to={`/`}>
-                Cancel
-              </Link>
-            </button>
-            <button className="form__submit" id="submit" type="submit">
-              Submit
-            </button>
-          </div>
-        </form>
+              <label className="form__label">Level of expertise</label>
+              <input
+                className="form__input"
+                placeholder="E.g. Novice, Intermediate, etc."
+                value={expertiseLevel}
+                onChange={(event) => {
+                  setExpertiseLevel(event.target.value);
+                }}
+              ></input>
+            </div>
+            <div className="form__button">
+              <button className="form__cancel" id="cancel" type="submit">
+                <Link className="form__cancel-link" to={`/`}>
+                  Cancel
+                </Link>
+              </button>
+              <button className="form__submit" id="submit" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </section>
     </>
   );
