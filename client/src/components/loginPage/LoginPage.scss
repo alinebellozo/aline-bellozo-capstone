@@ -1,0 +1,129 @@
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/colors" as *;
+
+
+.login {
+
+    padding: 1.5rem;
+    display: flex;
+    
+    &__header {
+        text-align: center;
+        color: $Subtitle-border;
+    }
+
+    &__error {
+        width: 55%;
+        margin: auto;
+        color: $Background-button;
+        font-size: larger;
+        font-weight: 700;
+    }
+
+    &__form {
+        margin-left: 31.25rem;
+        height: 34rem;
+        min-width: 25rem;
+        width: 25rem;
+        border: 4px double $Text-dark;
+        border-radius: 1rem;
+        box-shadow: 5px 0px 18px rgb(19, 24, 44, 0.9);
+    }
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    &__label {
+        padding: .5rem;
+        font-size: 1.2rem;
+    }
+
+    &__input {
+        padding: .7rem;
+        margin: .5rem;
+        height: 2.4rem;
+        max-height: 2.4rem;
+        width: 95%;
+        border-radius: 1.2rem;
+        border: 1px dotted;
+    }
+
+    &__remember {
+        padding: 1rem .5rem;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: space-evenly;
+        width: 40%;
+        margin-bottom: 1rem;
+    }
+
+    &__cancel {
+        background-color: $Light;
+        color: $Background-dark;
+        border-radius: 1.25rem;
+        border: 1px solid $Background-button-light;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+        
+        &:hover {
+            background-color: $Text-background-hover;
+        }
+    }
+
+    &__cancel-link {
+        text-decoration: none;
+        color: $Background-dark;
+    }
+
+    &__login {
+        background-color: $Background-dark;
+        color: $Light;
+        border-radius: 1.25rem;
+        border: 1px solid $Background-button-light;
+        width: 3.75rem;
+        max-width: 3.75rem;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $Text-background-hover;
+        }
+    }
+
+    &__new-account {
+        font-size: 1.2rem;
+        padding: 1rem .5rem;
+    }
+
+    &__new-link {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: $Subtitle-border;
+        padding-left: .5rem;
+    }
+
+    &__img-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 37.5rem;
+        min-width: 37.5rem;
+    }
+
+    &__image {
+        flex-basis: 80%;
+    }
+
+    &__image-link {
+        max-width: 100%
+    }
+}

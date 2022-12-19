@@ -1,0 +1,127 @@
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/colors" as *;
+
+.dashboard {
+
+    display: flex;
+
+    &__left {
+        background-color: $Background-dark;
+        width: 12%;
+        max-width: 12%;
+    }
+
+    &__menu h3 {
+        color: $Light;
+        padding: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__logout {
+        background-color: $Light;
+        color: $Background-dark;
+        border-radius: 1.25rem;
+        border: 1px solid $Background-button-light;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+        margin: 2rem 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__right {
+        padding: 2rem;
+    }
+
+    &__header {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 2rem 0;
+    }
+
+    &__card-one, &__card-two, &__card-three {
+        background-color: transparent;
+        width: 18.75rem;
+        height: 18.75rem;
+        border: 2px dotted $Subtitle-border;
+        border-radius: 1.5rem;
+        perspective: 62.5rem;
+    }
+    
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    &__card-one:hover &__inner {
+        transform: rotateY(180deg);
+        cursor: pointer;
+    }
+
+    &__front-one, &__front-two, &__front-three,
+    &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 1.5rem;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+
+    &__front-one {
+        background-image: url(../../assets/images/study-goals.svg);
+        background-size: 100%;
+        color: $Subtitle-border;
+    }
+
+    &__back {
+        background-color: $Text-background-hover;
+        color: $Light;
+        font-size: 1.375rem;
+        padding-top: .5rem;
+        transform: rotateY(180deg);
+        padding: 1rem;
+    }
+
+    &__card-two:hover &__inner {
+        transform: rotateY(180deg);
+        cursor: pointer;
+    }
+
+    &__front-two {
+        background-image: url(../../assets/images/board.svg);
+        background-size: 100%;
+        color: $Subtitle-border;
+    }
+
+    &__card-three:hover &__inner {
+        transform: rotateY(180deg);
+        cursor: pointer;
+    }
+
+    &__front-three {
+        background-image: url(../../assets/images/selflove.svg);
+        background-size: 100%;
+        color: $Subtitle-border;
+    }
+}

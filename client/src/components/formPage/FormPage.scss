@@ -1,0 +1,92 @@
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/colors" as *;
+
+.form {
+    padding: 1rem;
+
+    &__container {
+        border: 4px double $Text-dark;
+        border-radius: 1rem;
+        box-shadow: 5px 0px 18px rgb(19, 24, 44, 0.9);
+        width: 60%;
+        min-width: 60%;
+        max-width: 60%;
+        margin-left: 21.875rem;
+    }
+
+    &__header {
+        text-align: center;
+        color: $Subtitle-border;
+        margin-bottom: 0;
+    }
+
+    &__error {
+        background-color: $Background-button;
+    }
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5rem;
+        width: 95%;
+    }
+
+    &__label {
+        padding: .4rem 0;
+        font-size: 1.2rem;
+        width: 60%;
+    }
+
+    &__input {
+        padding: .7rem;
+        height: 2.4rem;
+        max-height: 2.4rem;
+        width: 95%;
+        border-radius: 1.2rem;
+        border: 1px dotted;
+    }
+
+    &__button {
+        display: flex;
+        gap: .625rem;
+        margin: 1rem;
+        padding-left: 4rem;
+        width: 40%;
+    }
+
+    &__cancel {
+        background-color: $Light;
+        color: $Background-dark;
+        border-radius: 1.25rem;
+        border: 1px solid $Background-button-light;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+
+        &:hover {
+            background-color: $Text-background-hover;
+        }
+    }
+
+    &__cancel-link {
+        text-decoration: none;
+        color: $Background-dark;
+    }
+
+    &__submit {
+        background-color: $Background-dark;
+        color: $Light;
+        border-radius: 1.25rem;
+        border: 1px solid $Background-button-light;
+        width: 3.75rem;
+        max-width: 3.75rem;
+        height: 2rem;
+        max-height: 2rem;
+        padding: .5rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $Text-background-hover;
+        }
+    }
+}
