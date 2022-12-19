@@ -17,7 +17,7 @@
     &__logo-link {
         text-decoration: none;
         color: $Light;
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     &__title-link {
@@ -34,28 +34,28 @@
     }
 
     &__login {
-        background-color: $LIGHT-BLUE;
+        background-color: $Background-button-light;
         border-radius: 1.25rem;
         border: 1px dotted $Light;
         width: 40%;
         height: 50%;
         font-family: 'Dosis';
-        font-size: 19px;
+        font-size: 1.1875rem;
 
         &:hover {
-            background-color: $BLUE-MEDIUM;
+            background-color: $Text-background-hover;
             cursor: pointer;
         }
     }
     
     &__signUp {
-        background-color: $RED;
+        background-color: $Background-button;
         border-radius: 1.25rem;
         border: 1px dotted $Light;
         width: 40%;
         height: 50%;
         font-family: 'Dosis';
-        font-size: 19px;
+        font-size: 1.1875rem;
 
         &:hover {
             cursor: pointer;

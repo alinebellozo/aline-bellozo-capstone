@@ -9,23 +9,23 @@
     
     &__header {
         text-align: center;
-        color: $YELLOW;
+        color: $Subtitle-border;
     }
 
-    // &__error {
-    //     width: 55%;
-    //     margin: auto;
-    //     color: $RED;
-    //     font-size: larger;
-    //     font-weight: 700;
-    // }
+    &__error {
+        width: 55%;
+        margin: auto;
+        color: $Background-button;
+        font-size: larger;
+        font-weight: 700;
+    }
 
     &__form {
         margin-left: 31.25rem;
         height: 34rem;
         min-width: 25rem;
         width: 25rem;
-        border: .25rem double $Text-dark;
+        border: 4px double $Text-dark;
         border-radius: 1rem;
         box-shadow: 5px 0px 18px rgb(19, 24, 44, 0.9);
     }
@@ -66,13 +66,13 @@
         background-color: $Light;
         color: $Background-dark;
         border-radius: 1.25rem;
-        border: 1px solid $LIGHT-BLUE;
+        border: 1px solid $Background-button-light;
         height: 2rem;
         max-height: 2rem;
         padding: .5rem;
         
         &:hover {
-            background-color: $BLUE-MEDIUM;
+            background-color: $Text-background-hover;
         }
     }
 
@@ -85,7 +85,7 @@
         background-color: $Background-dark;
         color: $Light;
         border-radius: 1.25rem;
-        border: 1px solid $LIGHT-BLUE;
+        border: 1px solid $Background-button-light;
         width: 3.75rem;
         max-width: 3.75rem;
         height: 2rem;
@@ -94,7 +94,7 @@
 
         &:hover {
             cursor: pointer;
-            background-color: $BLUE-MEDIUM;
+            background-color: $Text-background-hover;
         }
     }
 
@@ -106,7 +106,7 @@
     &__new-link {
         text-decoration: none;
         font-size: 1.2rem;
-        color: $YELLOW;
+        color: $Subtitle-border;
         padding-left: .5rem;
     }
 

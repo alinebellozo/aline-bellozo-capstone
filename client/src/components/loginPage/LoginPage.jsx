@@ -20,7 +20,6 @@ export default function LoginPage() {
     try {
       await signIn(email, password);
       navigate("/Dashboard");
-      alert("Logged in successfully!");
     } catch (err) {
       setError(error.message);
       console.log(error.message);
@@ -32,6 +31,7 @@ export default function LoginPage() {
       <section className="login">
         <form onSubmit={handleSubmit} className="login__form">
           <h2 className="login__header">Login</h2>
+          {error && <div className="login__error">{error}</div>}
           <div className="login__fields">
             <label className="login__label">Email</label>
             <input

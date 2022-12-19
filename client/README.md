@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# { communITy study }
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the capstone (final project) of the Web Development Bootcamp Program at BrainStation.
+This platform was created to connect people from all over the world, so they can study together, support each other, share their experiences, learn from and with each other, increase their network, make new friends, and much more!
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Screenshots](#screenshots)
+- [Run Locally](#run-locally)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Next Steps](#next-steps)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Create an .env file in the client folder with the following:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+REACT_APP_FIREBASE_API_KEY=<FIREBASE_API_KEY>
+REACT_APP_FIREBASE_AUTH_DOMAIN=<FIREBASE_AUTH_DOMAIN>
+REACT_APP_FIREBASE_PROJECT_ID=<FIREBASE_PROJECT_ID>
+REACT_APP_FIREBASE_STORAGE_BUCKET=<IREBASE_STORAGE_BUCKET>
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<FIREBASE_MESSAGING_SENDER_ID>
+REACT_APP_FIREBASE_APP_ID=<FIREBASE_APP_ID>
+REACT_APP_FIREBASE_MEASUREMENT_ID=<FIREBASE_MEASUREMENT_ID>
+```
 
-### `npm test`
+- Create a Firebase service key file.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run Locally
 
-### `npm run build`
+Clone the project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  git clone https://github.com/alinebellozo/aline-bellozo-capstone
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Go to the project directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  cd client
+```
 
-### `npm run eject`
+Start the server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+  npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Homepage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- On the top right, there are the options to Log In or Sign Up.
 
-## Learn More
+![homepage](https://user-images.githubusercontent.com/81250078/208345200-3cdc6107-76d9-4b83-a7f5-0cf88e18928c.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Login Page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Authentication for login with email and password created with Firebase.
 
-### Code Splitting
+![Login Page](https://user-images.githubusercontent.com/81250078/208345409-dcd7e503-2ed6-4651-af95-6712441763ff.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Sign Up Page
 
-### Analyzing the Bundle Size
+- Authentication for Sign Up with email, password, and password confirmation created with Firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Sign Up Page](https://user-images.githubusercontent.com/81250078/208345507-c4d9c0e7-478a-499a-8258-da4efde47526.png)
 
-### Making a Progressive Web App
+### Form Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Registration of a new user created with Firebase/Firestore.
 
-### Advanced Configuration
+![Form Page](https://user-images.githubusercontent.com/81250078/208345575-066055a1-dfd1-4ce1-a5f9-af1c888ab89d.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Dashboard
 
-### Deployment
+- Page where the user has access to features after they register (on the left).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Dashboard](https://user-images.githubusercontent.com/81250078/208345642-3ef206df-fe3e-44d4-8d2b-890895de9438.png)
 
-### `npm run build` fails to minify
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React 18.2
+- Boostrap 5 (for styling)
+- Sass 1.56 (for styling)
+- Firebase 9 (for Auth and CRUD)
+
+## Next steps
+
+- Work on the features for students in the Dashboard page, starting with the chat for them to communicate.
+
+- Work on the About page.
+
+- Work on the Events page, so the students can organize in-person study sessions, and also be up to date on events related to IT that they might be interested in participating.
+
+- Work on User profile, so the student can edit, update or delete their profile at any time.

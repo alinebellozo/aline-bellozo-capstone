@@ -1,18 +1,21 @@
 import "./Dashboard.scss";
 import { UserAuth } from "../../AuthContext";
 
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const [show, setShow] = useState(true);
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
+
+  const handleClose = () => setShow(false);
 
   const handleLogout = async () => {
     try {
       await logout();
       navigate("/");
-      alert("Logged out successfully!");
+      // alert("Logged out successfully!");
     } catch (err) {
       console.log(err.message);
     }

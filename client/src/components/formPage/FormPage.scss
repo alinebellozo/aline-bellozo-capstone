@@ -11,17 +11,17 @@
         width: 60%;
         min-width: 60%;
         max-width: 60%;
-        margin-left: 350px;
+        margin-left: 21.875rem;
     }
 
     &__header {
         text-align: center;
-        color: $YELLOW;
+        color: $Subtitle-border;
         margin-bottom: 0;
     }
 
     &__error {
-        background-color: $RED;
+        background-color: $Background-button;
     }
 
     &__fields {
@@ -48,7 +48,7 @@
 
     &__button {
         display: flex;
-        gap: 10px;
+        gap: .625rem;
         margin: 1rem;
         padding-left: 4rem;
         width: 40%;
@@ -58,13 +58,13 @@
         background-color: $Light;
         color: $Background-dark;
         border-radius: 1.25rem;
-        border: 1px solid $LIGHT-BLUE;
+        border: 1px solid $Background-button-light;
         height: 2rem;
         max-height: 2rem;
         padding: .5rem;
 
         &:hover {
-            background-color: $BLUE-MEDIUM;
+            background-color: $Text-background-hover;
         }
     }
 
@@ -77,7 +77,7 @@
         background-color: $Background-dark;
         color: $Light;
         border-radius: 1.25rem;
-        border: 1px solid $LIGHT-BLUE;
+        border: 1px solid $Background-button-light;
         width: 3.75rem;
         max-width: 3.75rem;
         height: 2rem;
@@ -86,7 +86,7 @@
 
         &:hover {
             cursor: pointer;
-            background-color: $BLUE-MEDIUM;
+            background-color: $Text-background-hover;
         }
     }
 }
